@@ -4,6 +4,7 @@ A containerized environment for running biophysical cell
 simulations on.
 
 Includes the following dependencies:
+  * ANACONDA (via miniconda: https://docs.conda.io/en/latest/miniconda.html)
 
 ## Background information
 
@@ -22,6 +23,15 @@ If you have docker already, you need to build your containers
 on your machine.  Run this from the root directory of this project:
 
 `docker-compose build`
+
+If you need a new dependency for your python environment,
+make sure to add it to the "lab_env.yml" statement in
+the docker file and run your build again.
+
+Running install from within the shell will change your container
+filesystem, but not the image, as soon as you restart your
+new dependency will be gone.  Building it into the image
+makes sure it's there everytime you start a new container.
 
 ## Things you might want to do
 

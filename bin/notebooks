@@ -1,0 +1,6 @@
+#!/bin/bash
+source ~/.bashrc
+source ~/miniconda/etc/profile.d/conda.sh
+conda activate lab
+conda info
+cd ~/notebooks && jupyter notebook --ip=0.0.0.0 --no-browser
